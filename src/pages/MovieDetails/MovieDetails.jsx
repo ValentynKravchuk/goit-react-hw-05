@@ -6,10 +6,10 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   useEffect(() => {
-    async function getData() {
+    const getData = async () => {
       const data = await fetchMovieDetails(movieId);
       setMovie(data);
-    }
+    };
     getData();
   }, [movieId]);
 
