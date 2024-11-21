@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchTrendingMovies } from "../../service/apiMovies";
+import MovieList from "../../components/MovieList/MovieList";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -15,11 +16,7 @@ const Home = () => {
   return (
     <div>
       <h1>Trending Today</h1>
-      <ul>
-        {movies.map((movie) => (
-          <li key={movie.id}>{movie.title}</li>
-        ))}
-      </ul>
+      <MovieList movies={movies} />
     </div>
   );
 };

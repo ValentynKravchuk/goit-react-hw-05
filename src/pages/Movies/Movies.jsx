@@ -1,7 +1,12 @@
-import React from "react";
+import MovieList from "../../components/MovieList/MovieList";
 
 const Movies = () => {
-  return <div></div>;
+  const [movies, setMovies] = useState([]);
+  return (
+    <div>
+      <MovieList movies={movies} />
+    </div>
+  );
 };
 
 export default Movies;

@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Header.module.css";
 import clsx from "clsx";
@@ -10,8 +9,12 @@ const Header = () => {
   return (
     <div>
       <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/movies">Movies</NavLink>
+        <NavLink to="/" className={buildLinkClass}>
+          Home
+        </NavLink>
+        <NavLink to="/movies" className={buildLinkClass}>
+          Movies
+        </NavLink>
       </nav>
     </div>
   );
