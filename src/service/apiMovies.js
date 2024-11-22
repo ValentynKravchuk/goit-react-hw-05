@@ -38,3 +38,13 @@ export const fetchMovieReviews = async (id) => {
   });
   return data.results;
 };
+export const searchMovies = async (query) => {
+  const { data } = await axios.get(`${BASE_URL}/search/movie`, {
+    params: { query },
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+  });
+  return data.results;
+};

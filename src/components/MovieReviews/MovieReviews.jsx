@@ -15,14 +15,15 @@ const MovieReviews = () => {
 
   return (
     <div>
-      <h2>Reviews</h2>
       <ul>
-        {reviews.map((review) => (
-          <li key={review.id}>
-            <h3>Author: {review.author}</h3>
-            <p>{review.content}</p>
-          </li>
-        ))}
+        {reviews.length > 0
+          ? reviews.map((review) => (
+              <li key={review.id}>
+                <p>{review.content}</p>
+                <p>Author: {review.author}</p>
+              </li>
+            ))
+          : "No reviews available"}
       </ul>
     </div>
   );
