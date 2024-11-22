@@ -1,22 +1,25 @@
 import { Field, Form, Formik } from "formik";
 
-const SearchBar = ({ handleSetQuery }) => {
-  const handleSubmit = (values) => {
-    console.log(values);
-    handleSetQuery(values.query);
+const SearchBar = ({ onSearch }) => {
+  const handleSubmit = (values, { resetForm }) => {
+    const query = values.query.trim();
+    if (query === "") {
+      alert("Please enter a valid search query!");
+      return;
+    }
+    onSearch(query);
+    resetForm();
   };
-  const initialValues = {
-    query: "",
-  };
+
   return (
-    <div>
-      <Formik onSubmit={handleSubmit} initialValues={initialValues}>
+    <Formik initialValues={{ query: "" }} onSubmit={handleSubmit}>
+      {() => (
         <Form>
-          <Field name="query" placeholder="Search movies..." />
+          <Field name="query" placeholder="Search for movies..." />
           <button type="submit">Search</button>
         </Form>
-      </Formik>
-    </div>
+      )}
+    </Formik>
   );
 };
 
