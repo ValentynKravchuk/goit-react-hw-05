@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { fetchMovieCast } from "../../service/apiMovies";
 import { useParams } from "react-router-dom";
 
-const MovieCast = ({ movieId }) => {
-  const {} = useParams();
+const MovieCast = () => {
+  const { movieId } = useParams();
   const [cast, setCast] = useState([]);
   useEffect(() => {
     const getData = async () => {

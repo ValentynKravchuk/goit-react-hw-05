@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { fetchMovieDetails } from "../../service/apiMovies";
 
 const MovieDetails = () => {
@@ -21,13 +21,14 @@ const MovieDetails = () => {
       <h1>{movie.title}</h1>
       <p>{movie.overview}</p>
       <img
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+        src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
         alt={movie.title}
       />
       <nav>
         <Link to="cast">Cast</Link>
         <Link to="reviews">Reviews</Link>
       </nav>
+      <Outlet />
     </div>
   );
 };

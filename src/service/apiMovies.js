@@ -26,7 +26,7 @@ export const fetchMovieCast = async (id) => {
       Authorization: `Bearer ${API_KEY}`,
     },
   });
-  return data.casts;
+  return data.cast;
 };
 
 export const fetchMovieReviews = async (id) => {
@@ -36,5 +36,5 @@ export const fetchMovieReviews = async (id) => {
       Authorization: `Bearer ${API_KEY}`,
     },
   });
-  return data.reviews;
+  return data.results;
 };
