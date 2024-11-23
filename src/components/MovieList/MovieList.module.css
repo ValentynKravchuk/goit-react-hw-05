@@ -1,0 +1,17 @@
+.container {
+  padding-left: 100px;
+}
+.list {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.item {
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  color: blue;
+}

@@ -1,5 +1,5 @@
 import { Field, Form, Formik } from "formik";
-
+import s from "./SearchBar.module.css";
 const SearchBar = ({ onSearch }) => {
   const handleSubmit = (values, { resetForm }) => {
     const query = values.query.trim();
@@ -12,14 +12,23 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <Formik initialValues={{ query: "" }} onSubmit={handleSubmit}>
-      {() => (
-        <Form>
-          <Field name="query" placeholder="Search for movies..." />
-          <button type="submit">Search</button>
-        </Form>
-      )}
-    </Formik>
+    <div className={s.container}>
+      <h2 className={s.name}>Movies search</h2>
+      <Formik initialValues={{ query: "" }} onSubmit={handleSubmit}>
+        {() => (
+          <Form className={s.form}>
+            <Field
+              className={s.input}
+              name="query"
+              placeholder="Search for movies..."
+            />
+            <button className={s.button} type="submit">
+              Search
+            </button>
+          </Form>
+        )}
+      </Formik>
+    </div>
   );
 };
 

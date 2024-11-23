@@ -1,4 +1,4 @@
-import "./App.css";
+import s from "./App";
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Navigation from "../Navigation/Navigation";
@@ -16,7 +16,7 @@ const MovieReviews = lazy(() => import("../MovieReviews/MovieReviews"));
 
 function App() {
   return (
-    <div>
+    <div className={s.container}>
       <Navigation />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>

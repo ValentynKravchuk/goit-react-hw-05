@@ -7,8 +7,8 @@ const buildLinkClass = ({ isActive }) => {
 };
 const Navigation = () => {
   return (
-    <header>
-      <nav>
+    <header className={s.wrapper}>
+      <nav className={s.nav}>
         <NavLink to="/" className={buildLinkClass}>
           Home
         </NavLink>
